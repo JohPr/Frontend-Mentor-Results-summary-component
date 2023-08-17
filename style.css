@@ -1,0 +1,249 @@
+
+@font-face {
+    font-family: 'Hanken Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./assets/fonts/static/HankenGrotesk-Medium.ttf') format('woff2');
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Hanken Grotest', sans-serif;
+    max-width: 100%;
+}
+
+:root {
+    --light-red_op: hsla(0, 100%, 67%, 0.1);
+    --orange-yellow_op: hsla(39, 100%, 56%, 0.1);
+    --green-teal_op: hsla(166, 100%, 37%, 0.1);
+    --cobalt-blue_op: hsla(234, 85%, 45%, 0.1);
+    --light-red: hsl(0, 100%, 67%);
+    --orange-yellow: hsl(39, 100%, 56%);
+    --green-teal: hsl(166, 100%, 37%);
+    --cobalt-blue: hsl(234, 85%, 45%);
+    --light_slate_blue : hsl(252, 100%, 67%);
+    --light_royal_blue : hsl(241, 81%, 54%);
+    --violet_blue: hsla(256, 72%, 46%, 1);
+    --persian_blue: hsla(241, 72%, 46%, 0);
+    --white: hsl(0, 0%, 100%);
+    --pale_blue: hsl(221, 100%, 96%);
+    --light_lavender: hsl(241, 100%, 89%);
+    --dark_gray_blue: hsl(224, 30%, 27%);
+}
+
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.card {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.overview {
+    height: 35rem;
+    width: 50rem;
+    background-color: var(--white);
+    border-radius: 50px;
+    box-shadow: 0 0 40px var(--pale_blue);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1440px) {
+    .overview {
+        width: 90%;
+        height: 62rem;
+        margin: 0 auto;
+        place-content: unset;
+        grid-template-columns: 1fr;
+    }
+}
+
+.both {
+    height: 100%;
+}
+
+.result {
+    background: linear-gradient(var(--light_slate_blue), var(--light_royal_blue));
+    border-radius: 50px;
+    text-align: center;
+    padding: 0 4rem;
+}
+
+.result > h1 {
+    font-size: 1.6rem;
+    color: var(--light_lavender);
+    opacity: .7;
+    margin-top: 2rem;
+}
+
+.points {
+    height: 10rem;
+    width: 10rem;
+    margin: 3rem auto 0;
+    background: linear-gradient(var(--violet_blue), var(--persian_blue));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform .5s;
+}
+
+.points:hover {
+    transform: scale(1.1);
+}
+
+.points > h2 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    color: var(--white);
+}
+
+.points > span {
+    color: var(--light_lavender);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.result > h2 {
+    font-size: 2rem;
+    color: white;
+    margin-top: 4rem;
+}
+
+.result > p {
+    font-size: 1.2rem;
+    color: var(--light_lavender);
+    margin-top: 2rem;
+    opacity: .7;
+}
+
+.summary {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+    gap: .5rem;
+}
+
+.summary > h1 {
+    width: 80%;
+    margin: 1rem auto 0;
+    color: var(--dark_gray_blue);
+    font-size: 1.8rem;
+}
+
+.sum_section {
+    height: 4rem;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    flex-grow: 1;
+
+}
+
+.sum_section > * {
+    display: inline-block;
+}
+
+svg {
+    height: 1.8rem;
+    width: 1.8rem;
+    margin-left: 1rem;
+    transition: transform .5s;
+}
+
+svg:hover {
+    transform: rotate(360deg);
+}
+
+.reaction {
+    background: var(--light-red_op);
+}
+
+.reaction > span {
+    color: var(--light-red);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.memory {
+    background: var(--orange-yellow_op);
+    
+}
+
+.memory > span {
+    color: var(--orange-yellow);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.verbal {
+    background: var(--green-teal_op);
+}
+
+.verbal > span {
+    color: var(--green-teal);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.visual {
+    background: var(--cobalt-blue_op);
+}
+
+.visual > span {
+    color: var(--cobalt-blue);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pnt_first {
+    color: var(--dark_gray_blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.pnt:last-child {
+    color: var(--light_lavender);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.btn {
+    width: 80%;
+    height: 3rem;
+    background: var(--dark_gray_blue);
+    border-radius: 40px;
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
